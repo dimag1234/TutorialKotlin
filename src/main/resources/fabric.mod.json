@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "tutorial",
+  "version": "${version}",
+  "name": "Tutorial",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/tutorial/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "org.tutorial.client.TutorialDataGenerator"
+    ],
+    "client": [
+      "org.tutorial.client.TutorialClient"
+    ],
+    "main": [
+      "org.tutorial.Tutorial"
+    ]
+  },
+  "mixins": [
+    "tutorial.mixins.json",
+    {
+      "config": "tutorial.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-language-kotlin": ">=${kotlin_loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
